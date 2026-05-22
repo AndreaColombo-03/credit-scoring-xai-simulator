@@ -5,6 +5,8 @@ import joblib
 import shap
 import matplotlib.pyplot as plt
 import re
+import xgboost   
+import sklearn   
 
 # --- FUNZIONE PURA AGGIUNTA PER I TEST AUTOMATICI ---
 def calculate_risk(model, scaler, expected_features, raw_input_dict):
