@@ -46,13 +46,13 @@ def train_and_evaluate_model(data_path='credit_risk_clean.csv'):
 
     # 5. Definizione e Addestramento del Modello XGBoost
     model = xgb.XGBClassifier(
-        n_estimators=200,            # Numero di alberi
-        learning_rate=0.05,          # Tasso di apprendimento (più basso = più robusto, ma richiede più alberi)
-        max_depth=4,                 # Profondità limitata per evitare overfitting
-        scale_pos_weight=scale_weight, # Gestione sbilanciamento
-        eval_metric='auc',           # Ottimizziamo per la curva ROC
-        random_state=42,
-        use_label_encoder=False      # Evita warning nelle nuove versioni di XGBoost
+        n_estimators=200,             
+        learning_rate=0.05,           
+        max_depth=4,                  
+        scale_pos_weight=scale_weight, 
+        base_score=0.5,               
+        eval_metric='auc',            
+        random_state=42
     )
 
     model.fit(X_train_scaled, y_train)
@@ -85,3 +85,4 @@ def train_and_evaluate_model(data_path='credit_risk_clean.csv'):
 
 if __name__ == "__main__":
     train_and_evaluate_model()
+    
