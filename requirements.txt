@@ -1,5 +1,5 @@
 pandas
-numpy
+numpy==1.24.4
 scikit-learn
 xgboost
 shap==0.45.0
