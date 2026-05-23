@@ -50,7 +50,7 @@ def train_and_evaluate_model(data_path='credit_risk_clean.csv'):
         learning_rate=0.05,           
         max_depth=4,                  
         scale_pos_weight=scale_weight, 
-        base_score=0.5,               
+        base_score=0.49,               
         eval_metric='auc',            
         random_state=42
     )
