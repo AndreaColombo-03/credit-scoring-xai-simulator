@@ -77,11 +77,11 @@ def train_and_evaluate_model(data_path='credit_risk_clean.csv'):
     # 7. Serializzazione e Salvataggio (Export per Streamlit)
     print("\n5. Salvataggio artefatti...")
     joblib.dump(scaler, 'scaler.pkl')
-    joblib.dump(model, 'xgboost_model.pkl')
+    model.save_model('xgboost_model.json')
     
     # Salviamo anche i nomi delle feature per la UI di Streamlit (utile per l'ordinamento)
     joblib.dump(list(X.columns), 'feature_names.pkl')
-    print("✅ Salvataggio completato: 'scaler.pkl', 'xgboost_model.pkl', 'feature_names.pkl'")
+    print("✅ Salvataggio completato: 'scaler.pkl', 'xgboost_model.json', 'feature_names.pkl'")
 
 if __name__ == "__main__":
     train_and_evaluate_model()

@@ -33,7 +33,8 @@ st.set_page_config(
 # 2. Caricamento degli artefatti (In Cache per non ricaricarli ad ogni click)
 @st.cache_resource
 def load_models():
-    model = joblib.load('xgboost_model.pkl')
+    model = xgboost.XGBClassifier()
+    model.load_model('xgboost_model.json')
     scaler = joblib.load('scaler.pkl')
     feature_names = joblib.load('feature_names.pkl')
     return model, scaler, feature_names
